@@ -1,0 +1,263 @@
+------------------------------------
+MENÚS SUPERIORES HORIZONTALES:
+------------------------------------
+ps_mainmenu -- CATEGORIAS DE PRODUCTOS
+ps_mainmenu2 -- ENLACES VARIOS EN LA PARTE SUPERIOR
+	-ps_mainmenu2 se ancla a displayTop
+	-ps_mainmenu se incluye por interfaz widget en MASTERLED/templates/_partials/searchbartop.tpl
+	-Se desplazan entre su contenedor original y los contenedores móviles con jQuery en custom.js. 
+
+-------------------------------------
+Banners principales:
+-------------------------------------
+
+todos maquetados desde MASTERLED/templates/_partials/topbanners.tpl
+	Banner SUPERIOR IZQUIERDA: ESTÁTICO EN topbanners.tpl
+	Banner SUPERIOR DERECHA: módulo ps_banner2 (oferta semanal)- Incluido con interfaz widget.
+	Banner INFERIOR IZDA: módulo ps_banner1 - Incluido con interfaz Widget
+	Banner INFERIOR DCHA: modulo ps_banner3 - Incluido con interfaz widget 
+	----Todos los banners salvo el 1º, que se hace en template, son configurables via interfaz de prestashop admin, en Módulos (Banner Oferta semanal, Banner nº2 y Banner nº3 )
+
+	01/12/2021 - Se cambia el orden de los banners en el archivo. Consultar topbanners.tpl
+
+
+--------------------------------------
+OFERTA - Pedido mínimo 100€
+--------------------------------------
+
+Se aplica por template en MASTERLED/templates/checkout/checkout.tpl
+- Archivo original guardado en el mismo directorio con nombre checkout.tpl.BAK-09-09-2020
+	Se añaden dos declaraciones IF anidadas que filtran por grupo de cliente + Importe del carro (Solo productos):
+        {if $customer.id_default_group == '30' OR $customer.id_default_group == '31' OR $customer.id_default_group == '32'}
+        {if $cart.subtotals.products.amount < 100}
+	Si se superan ambas declaraciones no se cargan los archivos relativos al checkout, mostrando un mensaje en su lugar 
+
+
+**************************************************** NOTA *******************************************************************
+Se crea un condicional para que el cliente con id 4343  (BELDEUS) pueda pasar pedidos por debajo de 100€.
+
+-Linea 65 -  {if $customer.id == '4343'}
+*****************************************************************************************************************************
+
+-------------------------------------
+INFORMACIONES CABECERA
+-------------------------------------
+- Información en MASTERLED/templates/_partials/shop-infos.tpl
+
+	Puede modificarse desde el panel de traducciones -> traducir themes -> Masterled [es,en,pt,fr] - Domain - Shop.Theme.Shopinfo
+	ENVIO GRATUITO DESDE [Tiene una sentencia IF ELSE para mostrar contenido condicionado al grupo por defecto. Oferta muestra otro mensaje distinto]
+	NºS GRATUITOS
+	HORARIO
+
+----------------------------------------
+ENLACES PRE-FOOTER
+----------------------------------------
+- Transporte Masterled
+- Garantía Masterled 
+- Compra Segura
+- Preguntas frecuentes
+- Ventajas LED
+Archivo MASTERLED/templates/_partials/info-bottom.tpl
+	a) Modificar enlaces y textos desde el archivo - Los enlaces están construidos con {url entity} Si se enlace a otra página CMS basta con cambiar el ID. 
+	b) modificar textos desde la interfaz de traducciones. Domain - Shop.Theme.Informacionbottom
+
+
+----------------------------------------
+CATEGORIAS PRINCIPALES
+----------------------------------------
+
+- Archivo /templates/_partials/categories-home.tpl
+	
+	Los precios se cogen desde el widget "cheapfromcat" utilizando el id del producto. El módulo coge automáticamente precio por grupo de cliente.
+
+
+
+-----------------------------------------
+ELIMINAR TRANSPORTE EN CARRITO
+-----------------------------------------
+
+- Archivo MASTERLED/templates/checkout/_partials/cart-detailed-totals.tpl
+
+	Se añade cláusula IF dentro de {if $subtotal.value && $subtotal.type !== 'tax'} para filtrar el tipo de subtotal. Si es "shipping", no se imprime.
+	Solo funciona en cart, no en checkout
+
+	Se comenta el código original (y se guarda archivo backup) añadiendo cláusula IF para discriminar CARRITO Y CHECKOUT. En carrito se ELIMINA el TOTAL IMPUESTOS INCLUIDOS (ya que automáticamente suma el envío) y se cambia para que muestre únicamente el total de productos - el descuento aplicado si lo hubiese. En Checkout se expresa el envío y el total con impuestos.
+
+- Archivo MASTERLED/modules/ps_shoppingcart/modal.tpl - se comenta la línea que contiene el shipping
+
+
+------------------------------------------
+REFERENCIA VARIANTE EN DETALLES PRODUCTO
+------------------------------------------
+
+- Archivo MASTERLED/templates/customer/_partials/order-details-no-return.tpl/order-details-return.tpl
+
+Cambio {$product.reference} por {$product.product_reference}
+
+
+
+--------------------------------------------
+TOTAL CON IVA EN LISTADO DE PEDIDOS ÁREA CLIENTE - 08/10/2020
+--------------------------------------------
+
+- Archivo MASTERLED/templates/customer/history.tpl
+
+Cambio {$order.totals.total.value} por {$order.totals.total_including_tax.value} para mostrar el total del pedido CON IMPUESTOS
+
+
+----------------------------------------------
+DESTACAR ELEMENTO "NOVEDADES" EN EL MENÚ SUPERIOR
+----------------------------------------------
+
+- Archivo MASTERLED/assets/css/custom.css
+
+Se declara, sobre la línea 255 reglas para estilar el enlace de novedades (lnk-novedades, lnk-new-products...)
+en color amarillo. Al resto del menú se añade un hover con fondo blanco y letras en negativo
+
+----------------------------------------------------------
+TOOLTIP EN CARACTERÍSTICAS PRINCIPALES, PÁGINA DE PRODUCTO
+----------------------------------------------------------
+
+- Archivo MASTERLED /templates/catalog/product.tpl
+
+Se añade un span dentro de cada característica principal (Potencia, apertura, voltaje de entrada, lúmenes) con un tooltip en mouseover. Se añade al header un estilo específico a este tooltip y la declaración css para que aparezca en rollover la leyenda de cada característica. (Mayor usabilidad y más posibilidades de maquetación en desktop que el típico "title")
+
+
+----------------------------------------------------------
+DISPONIBILIDAD EN PÁGINA DE PRODUCTO
+----------------------------------------------------------
+
+-Archivos:
+	MASTERLED /templates/catalog/_partials/product-variants.tpl
+	MASTERLED /templates/catalog/_partials/product-add-to-cart.tpl
+
+Se retira el condicional original de "product-add-to-cart.tpl" que mostraba las etiquetas "En Stock" "Reserva" o "Agotado" bajo el botón de añadir a carrito y se añade en ese mismo archivo una etiqueta que muestra el stock restante SOLO para profesionales (PRO, PRO+, OFERTA). < de 50 uds, + de 50, + de 100, + de 250, + de 500, + de 1000". Se actualiza al seleccionar variante
+
+Se modifica product-variants para reflejar el stock de cara variante de producto de manera independiente. Se crea dentro del input de selección (Tanto en radio como en el select) y se maqueta en función de la disponibilidad.
+
+---------------------------------------------------------
+OCULTAR DETERMINADOS CUPONES EN EL ÁREA DE CLIENTE
+---------------------------------------------------------
+
+- Archivo MASTERLED /templates/customer/discount.tpl
+
+
+Se asigna una variable array y se declaran los cupones a discriminar. Dentro del bucle de los cupones disponibles ( {foreach from=$cart_rules item=cart_rule} )
+se hace una declaración IF que busca la variable $cart_rule.code dentro del array creado ($cupones) y si hay un resultado NO imprime la fila. 
+
+**** OJO. Hay dos bucles. Uno para diseño desktop dentro de una tabla. El otro está debajo, en un div para diseño mobile. ****
+
+----------------------------------------------------------
+FIX MENSJES ANTIGUOS EN LA PÁGINA DE PRODUCTO
+----------------------------------------------------------
+
+- Archivo MASTERLED /templates/customer/_partials/order-messages.tpl
+
+En algunos pedidos hay mensajes viejos que no corresponden al pedido o al usuario. Para ocultarlos se hace una declaración IF sencilla dentro del foreach en el template para que no muestre ningún mensaje anterior al año 2018.
+
+Alrededor de la línea 32:
+      {assign var="msgyear" value="/"|explode:$message.message_date} //Asignamos una nueva variable en array con la fecha del mensaje. Si el último index del array (el año) es igual o superior a 2018, se muestra el mensaje
+      {if $msgyear.2 >= 2018}
+
+-----------------------------------------------------------
+PAGINAS ESPECIALES EN CMS
+-----------------------------------------------------------
+
+MASTERLED /templates/cms/...
+
+Se realiza una declaración IF en page.tpl que incluye distintos archivos template en función del identificador de la página. Se crean archivos para la página de profesionales (pagina-profesionales.tpl) y para la página de "Acerca de" (pagina-nosotros.tpl)
+
+Dentro de pagina-nosotros.tpl se establecen diferentes includes en función del idioma 
+	{assign var="fileinit" value='cms/about-us-'}
+	{assign var="ext" value=".tpl"}
+	{assign var=archivo value="{$fileinit}{$language.iso_code}{$ext}"}
+	{include file={$archivo}}
+
+
+
+mientras que en pagina-profesionales se declaran strings traducibles.
+
+TODO: Crear templates específicos para las páginas "Acerca de" y "Profesionales", como se ha hecho con la Landing page de Black Friday 2022 (archivo page-33.tpl) 
+
+
+
+
+-------------------------------------------------------------
+OCULTAR METODO DE PAGO CONTRAREEMBOLSO PARA PEDIDO SUPERIORES A 1000€ IVA INCLUIDO
+-------------------------------------------------------------
+
+MASTERLED /templates/checkout/_partials/steps/payment.tpl
+
+Declaro variable smarty importe igualada al total del pedido - cupones aplicados.
+Se declara sentencia IF. Si el método de pago es cashondeliveryplus y el importe supera los 826,45€ (aprox. 1000€ IVA incluido) saltamos el método de pago.
+
+
+
+---------------------------------------------------------------
+OCULTAR ETIQUETAS DE DESCUENTO Y PRECIO ANTERIOR PARA CLIENTES DE GRUPOS CON DESCUENTO
+---------------------------------------------------------------
+
+MASTERLED 	/templates/catalog/product.tpl
+		/templates/catalog/_partials/miniatures/product.tpl - product-featured.tpl/featured-product.tpl
+		/templates/catalog/_partials/product-discounts.tpl
+		/templates/catalog/_partials/product-prices.tpl
+		/templates/checkout/_partials/cart-detailed-product-line.tpl
+
+Declarada variable smarty con array de los grupos a los que se va a aplicar este cambio.
+Se crea una serie de condicionales en las que filtramos estos grupos y no les mostramos la información de descuentos en general (ni porcentaje descontado, ni precio anterior)
+
+
+--------------------------------------------------------------
+CANONICALS Y HREFLANGS
+-------------------------------------------------------------
+
+MASTERLED /templates/_partials/head.tpl
+
+Se realizan cambios en el comportamiento de los hreflang y de la URL canónica para adaptarse a las guías de Google
+
+En la página de producto, si la URL contiene un id_attribute (variante) no imprime etiqutas hreflang.
+{if $page.page_name == 'product'}
+{if isset($smarty.get.id_product_attribute) && $smarty.get.id_product_attribute <> 0}
+{else}
+
+Previamente se discriminaba también el hreflang alternative del lenguaje actual, pero se ha comentado ese trozo.
+{if $idioma == $language.iso_code}{*{continue}*}{/if}
+
+
+--------------------------------------------------------------
+ETIQUETAS SCHEMA DE PRODUCTO
+--------------------------------------------------------------
+
+MASTERLED /templates/catalog/_partials/product-prices.tpl - líneas ~ 45 - 85
+
+Se modifican algunas etiquetas itemprop y content para adaptarse a los guidelines de google con respecto a schema:product 
+
+
+----------------------------------------------------------------
+UNIDADES RESTANTES Y ETIQUETA OUTLET PARA PRODUCTOS DE LIQUIDACION
+----------------------------------------------------------------
+
+MASTERLED	/templates/catalog/_partials/product-variants.tpl - Se añade en cada variante las unidades restantes del producto, solo para productos dentro de la categoría OUTLET
+
+	    	/templates/catalog/_partials/miniatures/product.tpl - Se añade, en overlay sobre la imagen del producto, la etiqueta OUTLET para los productos de la categoría ID 254
+
+
+
+--------------------------------------------------------------------
+OCULTAR PRODUCTO "MEDIDAS ESPECIALES" EN EL CARRITO Y PROCESO DE CHECKOUT
+--------------------------------------------------------------------
+
+MASTERLED /templates/checkout/_partials/cart-summary.tpl
+						   /cart-detailed.tpl - Se añade código condicional para filtrar por ID de producto:       {if $product.id_product == 1885}{continue}{/if}
+
+ABRIL 2023
+*SE HA MODIFICADO EL FUNCIONAMIENTO DE ESTA MODIFICACIÓN. SE HACE PARCIALMENTE CON LA VARIABLE SMARTY OFRECIDA POR EL MÓDULO QUE GENERA LOS EXCESOS.
+
+
+----------------------------------------------------------------------
+MODIFICACION DE MENU LATERAL DE CATEGORÍAS
+----------------------------------------------------------------------
+
+-- Se arma un IF statement para discriminar la categoría SOLAR LED y aplicar un estilo especial a la palabra SOLAR en todos los idiomas
+
+-- Se saca del foreach la categoría OUTLED para colocarla al final de la lista, creando otro foreach.

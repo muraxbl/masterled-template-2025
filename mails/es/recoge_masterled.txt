@@ -1,0 +1,8 @@
+[{shop_name}]({shop_url})
+Hola {firstname} {lastname},
+Tu pedido está listo para ser recogido {shop_name}.
+
+Puedes pasar a recogerlo por nuestras instalaciones de Lunes a jueves de 9:30 a 17:00 o los Viernes hasta las 16:30
+
+
+[{shop_name}]({shop_url})

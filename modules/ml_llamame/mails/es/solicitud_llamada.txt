@@ -1,0 +1,12 @@
+[{shop_name}]({shop_url})
+
+{asunto}
+
+Hola,
+{nombre} ha solicitado una llamada desde Masterled.
+
+{phone}
+
+Llamada solicitada en fecha: {fecha}
+
+[{shop_name}]({shop_url})

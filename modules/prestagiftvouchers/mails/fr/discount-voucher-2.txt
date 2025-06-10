@@ -1,0 +1,8 @@
+Bonjour {firstname} {lastname},
+Merci pour votre achat !
+Suite à votre dernière commande, nous avons le plaisir de vous offrir les frais de livraison dès {min_use} {min_use_converted} d’achat.
+Ce bon de réduction est utilisable à l'occasion de votre prochain achat grâce au code suivant: {Code}
+Cette offre est valable pendant {duration} jours.
+Vous pouvez retrouver ce code à tout moment dans votre espace client, à la section "Mes bons de réduction". Pour l'utiliser, il vous suffit de saisir votre code dans la page de récapitulatif de commande, dans le champ dédié.
+J’en profite !
+A bientôt sur {shop_name}

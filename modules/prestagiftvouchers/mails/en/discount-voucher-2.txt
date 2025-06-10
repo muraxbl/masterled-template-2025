@@ -1,0 +1,8 @@
+Hello {firstname} {lastname},
+Thanks for your purchase !
+To thank you for your order, we'd like to offer you the shipping fees with a minimum purchase of {min_use}{min_use_converted}.
+This voucher can be used on your next purchase using this code: {code}
+This offer is valid for {duration} days.
+You can find this code at any time in your customer account, in "My vouchers". You can enter your code in the designated field in the order recap page.
+I'm interested!
+See you soon on {shop_name}

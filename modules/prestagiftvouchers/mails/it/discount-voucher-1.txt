@@ -1,0 +1,8 @@
+Buongiorno {firstname} {lastname},
+Grazie per l'acquisto !
+In seguito al tuo ultimo acquisto, abbiamo il piacere di offrirti le spese di spedizione senza minimo di acquisto.
+Questo buono sconto è utilizzabile in occasione del tuo prossimo acquisto con il codice seguente: {code}
+Questa offerta è valida per {duration} giorni.
+Puoi trovare questo codice in qualsiasi momento dal tuo account cliente nella sezione "I miei buoni sconto". Potrai inserire il tuo codice nell'apposito campo presente nella pagina di riepilogo dell'ordine.
+Ne approfitto!
+A presto su {shop_name}

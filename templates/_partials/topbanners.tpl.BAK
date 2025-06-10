@@ -1,0 +1,84 @@
+			<div id="preciosconiva">
+				<span>¡Ahora todos nuestros precios incluyen IVA!</span>
+			</div>
+			<style>
+				#topbannerswrap {
+					display: flex !important;
+					flex-wrap: wrap;
+					justify-content: space-around;
+				}
+				@media(max-width: 599px) {
+					#topbannerswrap > div {
+						flex-basis: unset !important;
+						flex: 0 1 98% !important;
+						aspect-ratio: 821 / 192;
+						overflow: hidden;
+						min-height: unset !important;
+						max-width: unset !important;
+						margin: 1rem 0 !important;
+					}
+					#topbannerswrap > div:nth-of-type(1), #topbannerswrap > div:nth-of-type(3) {
+						display: none;
+					}
+				}
+				@media (min-width:600px) and (max-width:1199px) {
+					#topbannerswrap {
+						justify-content: flex-start;
+						flex-wrap: nowrap;
+						overflow: hidden;
+						width: calc(100% - 30px);
+						float: none;
+						margin:0 15px;
+					}
+					#topbannerswrap > div {
+						flex-basis: unset !important;
+						flex: 1 0 100% !important;
+						aspect-ratio: 821 / 192;
+						overflow: hidden;
+						min-height: unset !important;
+						max-width: unset !important;
+						margin: 1rem 0 !important;
+					}
+				}
+				@media (min-width: 1200px) {
+					#topbannerswrap > div {
+						flex-basis: unset !important;
+						flex: 0 1 48% !important;
+						aspect-ratio: 821 / 192;
+						overflow: hidden;
+						min-height: unset !important;
+						max-width: unset !important;
+						margin: 1rem 0 !important;
+					}
+				}
+				#preciosconiva {
+					display:block;
+					float:none;
+					width:calc(50% - 30px);
+					padding:1rem 1.5rem;
+					border:1px solid rgba(0,0,0,0.2);
+					margin:2rem 0 0 0;
+					text-align: center;
+					position: relative;
+					left:50%;
+					transform: translateX(-50%);
+					font-weight:bold;
+				}
+				
+			</style>
+			
+          <div id="topbannerswrap">
+			
+				{widget name='ps_banner2'}
+				{widget name='ps_banner1'}
+				<div class="banner-wrapper" style="background-image: url('{$urls.img_url}/bannershome/banner-profesional.jpg');background-size: cover;background-position: right center">
+					<a href="{url entity='cms' id=7 id_lang=$language.id}">
+						<div>
+							<span class="mainText" style="background-color:transparent;color:#333;text-shadow: 1px 2px 5px rgba(0,0,0,0.2);">{l s='Los mejores precios para' d='Shop.Theme.Mainbanner'} <strong>{l s='Profesionales y Distribuidores' d='Shop.Theme.Mainbanner'}</strong></span>
+							<span class="mainText" style="position:absolute;bottom:5px !important;margin-left:16px;background-color: rgba(0,0,0,0.5);color:#333;"><strong style="color:#e4e2e1">{l s='INFÓRMATE' d='Shop.Theme.Mainbanner'}</strong></span>
+						</div>
+					</a>
+				</div>
+		        {widget name='ps_banner3'}
+			</div>
+		  </div>

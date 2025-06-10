@@ -1,0 +1,224 @@
+<img border="0" class="cat-drag" src="{$urls.img_url}fingerdrag.png">
+<div class="contenedor-categorias">
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-downlight" alt="{l s='Compra Downlights fijos y orientables baratos' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Downlights fijos y orientables' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1193}</span>
+		</div>
+		<a href="{url entity='category' id=93 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-plafon" alt="{l s='Compra Plafones de techo y Apliques de superficie LED' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Plafones superficie LED' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1024}</span>
+		</div>
+		<a href="{url entity='category' id=94 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-placaled"  alt="{l s='Compra paneles de empotrar extraplanos y placas LED de techo circulares y redondas baratas' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Paneles extraplanos y Placas LED' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=866}</span>
+		</div>
+		<a href="{url entity='category' id=90 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-bombillas" alt="{l s='Las bombillas LED de rosca, GU10, de pincho más baratas' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Bombillas' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=789}</span>
+		</div>
+		<a href="{url entity='category' id=91 id_lang=$language.id}"></a>
+
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-tubos" alt="{l s='Compra tubos fluorescentes LED T8, T5 y regletas LED ensamblables al mejor precio' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Tubos y regletas' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=682}</span>
+		</div>
+		<a href="{url entity='category' id=95 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-tiras" alt="{l s='LED en Tiras y Neon LED para interior y exterior. Los más baratos en Masterled' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Tiras y accesorios' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1524}</span>
+		</div>
+		<a href="{url entity='category' id=97 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-industrial" alt="{l s='Compra Iluminación industrial LED para naves, almacenes, etc. Campanas LED, UFO, Iluminación Vial. Al mejor precio ' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Industrial LED' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=399}</span>
+		</div>
+		<a href="{url entity='category' id=101 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-carril" alt="{l s='Compra Focos LED de rail y accesorios para comercio, grandes superficies, oficinas y el hogar' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Focos de Carril' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=746}</span>
+		</div>
+		<a href="{url entity='category' id=98 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-proyector" alt="{l s='Focos LED Profesionales al mejor precio. Proyectores LED Planos para exterior' d='Shop.Theme.Categorieshome'}"> 
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Proyectores LED' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1415}</span>
+		</div>
+		<a href="{url entity='category' id=99 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-solar" alt="{l s='Compra luces LED solares autónomas para exterior' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos"><span style="color:#ffd906">{l s="SOLAR" d='Shop.Theme.Categorieshome'}</span> {l s='LED' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1241}</span>
+		</div>
+		<a href="{url entity='category' id=190 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-comercial" alt="{l s='La iluminación LED Comercial más económica y eficiente' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Iluminación comercial' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=492}</span>
+		</div>
+		<a href="{url entity='category' id=141 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-decoracion" alt="{l s='Apliques de pared, de cabecero, para dormitorio, lámparas colgantes y otros artículos de iluminación decorativa para el hogar y el comercio' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Decoración Interior' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=804}</span>
+		</div>
+		<a href="{url entity='category' id=174 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-decoracionext" alt="{l s='Luces de jardín. Balizas, apliques de pared para fachada. Iluminaicón decorativa exterior al precio más competitivo' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Decoración Exterior' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1241}</span>
+		</div>
+		<a href="{url entity='category' id=175 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-emergencia" alt="{l s='Luces LED de emergencia, señalizacion y balizamiento profesionales' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Señalización y emergencias' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1275}</span>
+		</div>
+		<a href="{url entity='category' id=117 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-electrico"  alt="{l s='Mecanismos Shucko, interruptores, reguladores, cable eléctrico. Todo para instalación y cuadros eléctricos desde cero' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Material eléctrico' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1711}</span>
+		</div>
+		<a href="{url entity='category' id=170 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-canalizacion" alt="{l s='Instalación eléctrica a la vista con canalización vintage metálica. Look industrial para tus instalaciones' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Canalizaciones metálicas' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1219}</span>
+		</div>
+		<a href="{url entity='category' id=188 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-piscina" alt="{l s='Luces estancas sumergibles para piscina y alrededores. Empotrables de suelo y bañadores' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Luces de Piscina' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1444}</span>
+		</div>
+		<a href="{url entity='category' id=139 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-accesorios" alt="{l s='Todos los accesorios para tu iluminación LED al precio más bajo' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Accesorios' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=431}</span>
+		</div>
+		<a href="{url entity='category' id=100 id_lang=$language.id}"></a>
+	</div>	
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-drivers" alt="{l s='Transformadores de Corriente continua o alterna en 12 o 24V, y drivers para luz LED' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Drivers y transformadores' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=382}</span>
+		</div>
+		<a href="{url entity='category' id=89 id_lang=$language.id}"></a>
+	</div>
+
+	<div class="item-categoria">
+		<div class="parte1">
+			<img border="0" src="{$urls.img_url}transparencia.png" style="background-image:url('{$urls.img_url}categories-home/sprite_categorias-01.jpg');" class="ch-banadores" alt="{l s='Proyecta luz a tu fachada y marca el camino con nuestros bañadores y focos empotrables' d='Shop.Theme.Categorieshome'}">
+		</div>
+		<div class="parte2">
+			<span class="titulos">{l s='Bañadores de pared' d='Shop.Theme.Categorieshome'}</span>
+			<span class="precio"><span class="desde">desde</span> {widget name='cheapfromcat' id=1124}</span>
+		</div>
+		<a href="{url entity='category' id=180 id_lang=$language.id}"></a>
+	</div>
+</div>

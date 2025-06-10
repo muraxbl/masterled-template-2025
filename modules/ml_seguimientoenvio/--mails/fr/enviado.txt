@@ -1,0 +1,15 @@
+[{shop_name}]({shop_url})
+Hola {firstname} {lastname},
+Su pedido ha sido enviado
+
+Su pedido con la referencia {order_name} ha sido enviado a través de la agencia {agencia} con número de seguimiento {seguimiento}. 
+Puede consultar el estado de su envío en la página del transportista pulsando el siguiente enlace: 
+
+{url}
+
+Cuando reciba su paquete recuerde revisar toda la mercancía y comprobar el estado de los productos, el plazo máximo para reclamar roturas debido al transporte es de **48h**
+&iexcl;Gracias por comprar en {shop_name}.!
+
+Puede revisar su pedido y descargar la factura desde ["Historial de pedidos"]({history_url}) de su cuenta de cliente, haciendo clic en {my_account_url} en nuestra tienda.
+
+[{shop_name}]({shop_url})

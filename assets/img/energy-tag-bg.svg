@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.32 42.54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #1d1d1b;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-3" points="64.23 41.43 .25 41.43 .25 .25 64.23 .25 83.97 20.84 64.23 41.43"/>
+  <rect class="cls-1" x=".26" y=".37" width="13.62" height="41.18"/>
+  <text class="cls-4" transform="translate(3.2 39.54)"><tspan x="0" y="0">G</tspan></text>
+  <text class="cls-4" transform="translate(3.63 10.07)"><tspan x="0" y="0">A</tspan></text>
+  <g>
+    <line class="cls-2" x1="7.06" y1="29.75" x2="7.06" y2="12.54"/>
+    <polyline class="cls-2" points="5.51 13.88 7.06 12.17 8.59 13.88"/>
+  </g>
+</svg>

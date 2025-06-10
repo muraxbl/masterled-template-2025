@@ -1,0 +1,8 @@
+Buenos días, {firstname} {lastname},
+¡Muchas gracias por tu compra!
+Por tu último pedido nos complace enviarte un cupón de descuento de {value}{symbol} {converted_value} sin minimo de compra.
+Este cupón es utilizable en tu próxima compra con el siguiente código: {code}
+Oferta válida durante {duration} días.
+Este código estará disponible cuando quieras en tu cuenta de cliente en «Mis vales». Introduce el código en la casilla correspondiente de la página de resumen del pedido.
+Utilizar
+¡Esperamos verte muy pronto en {shop_name}!

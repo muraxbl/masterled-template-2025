@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>Message des {shop_name}</title>
+<link rel="stylesheet" type="text/css" href="https://masterled.es//mails/themes/classic/assets/email.css">
+<style>
+      /****** responsive ********/
+      @media only screen and (max-width: 300px){
+        body {
+          width:100% !important;
+          margin:auto !important;
+        }
+        .table {width:100% !important;margin:auto !important;}
+        .logo, .titleblock, .linkbelow, .box, .footer, .space_footer{width:auto !important;display: block !important;}
+        span.title{font-size:20px !important;line-height: 23px !important}
+        span.subtitle{font-size: 14px !important;line-height: 18px !important;padding-top:10px !important;display:block !important;}
+        td.box p{font-size: 12px !important;font-weight: bold !important;}
+        .table-recap{width: 200px!important;}
+        .table-recap tr td, .conf_body td{text-align:center !important;}
+        .address{display: block !important;margin-bottom: 10px !important;}
+        .space_address{display: none !important;}
+      }
+
+      @media only screen and (min-width: 301px) and (max-width: 500px) {
+        body {width:100%!important;margin:auto!important;}
+        .table {width:100%!important;margin:auto!important;}
+        .logo, .titleblock, .linkbelow, .box, .footer, .space_footer{width:auto!important;display: block!important;}
+        .table-recap{width: 100% !important;}
+        .table-recap tr td, .conf_body td{text-align:center !important;}
+
+      }
+
+      @media only screen and (min-width: 501px) and (max-width: 2768px) {
+        body {width:100%!important;margin:auto!important;}
+        .table {width:100%!important;margin:auto!important;max-width:1200px;float:none;margin-left:auto;margin-right: auto;}
+        .logo, .titleblock, .linkbelow, .box, .footer, .space_footer{width:auto!important;display: block!important;}
+      }
+
+
+      /* Mobile */
+
+      @media only screen and (max-device-width: 480px) {
+        body {width:100%!important;margin:auto!important;}
+        .table {width:100%;margin:auto!important;}
+        .logo, .titleblock, .linkbelow, .box, .footer, .space_footer{width:auto!important;display: block!important;}
+
+        .table-recap{width: 295px!important;}
+        .table-recap tr td, .conf_body td{text-align:center!important;}
+        .address{display: block !important;margin-bottom: 10px !important;}
+        .space_address{display: none !important;}
+      }
+    </style>
+</head>
+<body style="background-color: #ffffff; width: 100%; margin: auto; font-family: &#039;Open-sans&#039;, sans-serif; color: #555454; font-size: 13px; line-height: 18px; -webkit-text-size-adjust: none;" bgcolor="#ffffff" width="100%">
+<table class="table table-mail" style="width: 100%; margin-top: 10px; -moz-box-shadow: 0 0 5px #afafaf; -webkit-box-shadow: 0 0 5px #afafaf; -o-box-shadow: 0 0 5px #afafaf; box-shadow: 0 0 5px #afafaf; filter: progid:DXImageTransform.Microsoft.Shadow(color=#afafaf, Direction=134, Strength=5);" width="100%">
+<tbody>
+<tr>
+<td id="header-left" class="space" style="width: 20px;" width="20">&nbsp;</td>
+<td align="center">
+<table class="table" bgcolor="#ffffff" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td align="center" class="logo" style="border-bottom: 4px solid #ffffff;"><a title="{shop_name}" href="{shop_url}" test="{shop_url}" style="color: #337ff1;"> <img src="{shop_logo}" alt="{shop_name}" /></a></td>
+</tr>
+<tr>
+<td align="center" class="titleblock"></td>
+</tr>
+<tr>
+<td class="linkbelow"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span>Nouvelle commande dans votre boutique {shop_name} pass&eacute;e par le client :{firstname} {lastname} ({email})</span> </span></td>
+</tr>
+<tr>
+<td class="space_footer" style="padding: 0 !important;">&nbsp;</td>
+</tr>
+<tr>
+<td class="box" colspan="3" style="background-color: #f8f8f8; border: 1px solid #D6D4D4;" bgcolor="#f8f8f8">
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<p style="margin: 3px 0 7px 0; text-transform: uppercase; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #D6D4D4;">D&Eacute;TAILS DE LA COMMANDE</p>
+<span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span style="color: #777777;"><span style="color: #333333;"><strong>Commande:</strong></span> {order_name} pass&eacute;e le {date}<br /><br /><span style="color: #333333;"><strong>Payement:</strong></span> {payment} </span> </span></td>
+<td width="10">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table class="table table-recap" bgcolor="#ffffff" style="width: 100%; border-collapse: collapse;" width="100%"><!-- Title -->
+<thead>
+<tr><th style="background-color: #fbfbfb; padding: 10px; font-family: Arial; color: #333333; font-size: 13px; border: 1px solid #D6D4D4;" bgcolor="#fbfbfb">R&eacute;f&eacute;rence</th><th style="background-color: #fbfbfb; padding: 10px; font-family: Arial; color: #333333; font-size: 13px; border: 1px solid #D6D4D4;" bgcolor="#fbfbfb">Produit</th><th style="background-color: #fbfbfb; padding: 10px; font-family: Arial; color: #333333; font-size: 13px; border: 1px solid #D6D4D4;" bgcolor="#fbfbfb">Prix unitaire</th><th style="background-color: #fbfbfb; padding: 10px; font-family: Arial; color: #333333; font-size: 13px; border: 1px solid #D6D4D4;" bgcolor="#fbfbfb">Quantit&eacute;</th><th style="background-color: #fbfbfb; padding: 10px; font-family: Arial; color: #333333; font-size: 13px; border: 1px solid #D6D4D4;" bgcolor="#fbfbfb">Prix tota</th></tr>
+</thead>
+<tbody>
+  {items}
+<tr class="conf_body">
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> <strong>Produits</strong></span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor="#f8f8f8" align="right" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> {total_products} </span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="conf_body">
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><strong>R&eacute;ductions</strong></span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> {total_discounts} </span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="conf_body">
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> <strong>Transport</strong></span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> {total_shipping_tax_excl} </span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="conf_body">
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><strong>Total des imp&ocirc;ts pay&eacute;s</strong></span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> {total_tax_paid} </span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="conf_body">
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" style="padding: 0; color: #333333;"><span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"> <strong>Total pay&eacute;</strong></span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor="#f8f8f8" colspan="4" style="padding: 7px 0; color: #333333; border: 1px solid #D6D4D4;">
+<table class="table" style="width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+<td align="right" class="total_amount" style="padding: 0; color: #333333; font-size: 21px; font-weight: 500; font-family: &#039;Open-sans&#039;, sans-serif;"><span size="4" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: large;"> {total_paid} </span></td>
+<td width="10" style="padding: 0; color: #333333;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="box" colspan="3" style="background-color: #f8f8f8; border: 1px solid #D6D4D4;" bgcolor="#f8f8f8">
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<p style="margin: 3px 0 7px 0; text-transform: uppercase; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #D6D4D4;">TRANSPORTEUR:</p>
+<span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span style="color: #777777;"> {carrier} </span> </span></td>
+<td width="10">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="space_footer" style="padding: 0 !important;">&nbsp;</td>
+</tr>
+<tr>
+<td>
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td class="box address" width="310" style="background-color: #f8f8f8; border: 1px solid #D6D4D4;" bgcolor="#f8f8f8">
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<p style="margin: 3px 0 7px 0; text-transform: uppercase; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #D6D4D4;">ADRESSE DE LIVRAISON</p>
+<span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span style="color: #777777;"> {delivery_block_html} </span> </span></td>
+<td width="10">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="20" class="space_address">&nbsp;</td>
+<td class="box address" width="310" style="background-color: #f8f8f8; border: 1px solid #D6D4D4;" bgcolor="#f8f8f8">
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<p style="margin: 3px 0 7px 0; text-transform: uppercase; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #D6D4D4;">ADRESSE DE FACTURATION</p>
+<span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span style="color: #777777;"> {invoice_block_html} </span> </span></td>
+<td width="10">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="space_footer" style="padding: 0 !important;">&nbsp;</td>
+</tr>
+<tr>
+<td class="box" colspan="3" style="background-color: #f8f8f8; border: 1px solid #D6D4D4;" bgcolor="#f8f8f8">
+<table class="table" style="width: 100%;" width="100%">
+<tbody>
+<tr>
+<td width="10">&nbsp;</td>
+<td>
+<p style="margin: 3px 0 7px 0; text-transform: uppercase; font-weight: 500; font-size: 18px; padding-bottom: 10px; border-bottom: 1px solid #D6D4D4;">MESSAGE DU CLIENT:</p>
+<span size="2" face="Open-sans, sans-serif" color="#555454" style="color: #555454; font-family: Open-sans, sans-serif; font-size: small;"><span style="color: #777777;"> {message} </span> </span></td>
+<td width="10">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class="space_footer" style="padding: 0 !important;">&nbsp;</td>
+</tr>
+<tr>
+<td class="footer" style="border-top: 4px solid #333333;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td id="footer-right" class="space" style="width: 20px;" width="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

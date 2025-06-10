@@ -1,0 +1,9 @@
+Su pedido número {order_name} se encuentra en espera, pendiente de alguna confirmación por su parte. 
+
+Por favor, póngase en contacto con nosotros contestando a este mensaje o en los números de teléfono
+
+986 954 005 y 886 311 868
+
+en horario comercial.
+
+Por favor, tenga en cuenta que su pedido no podrá ser enviado en tanto no recibamos la confirmación del cliente.

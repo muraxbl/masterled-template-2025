@@ -1,0 +1,15 @@
+{shop_url}
+
+Olá {firstname} {lastname},
+
+Your guest account has been turned into a customer account
+
+Congratulations, your guest account for {shop_name} has been turned into a customer account!
+
+Email address: {email}
+
+Pode aceder à sua conta de cliente na nossa loja: [{shop_name}]({shop_url})
+
+[{shop_name}]({shop_url})
+
+ 

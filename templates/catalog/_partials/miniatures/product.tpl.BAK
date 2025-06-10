@@ -1,0 +1,319 @@
+  {**
+ * 2007-2019 PrestaShop and Contributors
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to https://www.prestashop.com for more information.
+ *
+ * @author    PrestaShop SA <contact@prestashop.com>
+ * @copyright 2007-2019 PrestaShop SA and Contributors
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
+ * International Registered Trademark & Property of PrestaShop SA
+ *}
+{block name='head' append}
+{/block}
+{block name='product_miniature_item'}
+  <article class="product-in-list js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+    <div class="product-in-list--image-container">
+      {if $product.reference|strstr:"30x60" OR $product.reference|strstr:"30X60"}
+        <span class="medida">30x60cm</span>
+      {elseif $product.reference|strstr:"60x60" OR $product.reference|strstr:"60X60"}
+        <span class="medida">60x60cm</span>
+      {elseif $product.reference|strstr:"30x120" OR $product.reference|strstr:"30X120"}
+        <span class="medida">30x120cm</span>
+      {elseif $product.reference|strstr:"60x120" OR $product.reference|strstr:"60X120"}
+        <span class="medida">60x120cm</span>
+      {elseif $product.id_product == '2218'}
+        <span class="medida" style="right:auto;left:0;transform: translate(0px, -5px);color:#00338E">PACK 10 Uds</span>
+
+      {/if}
+      {foreach from=$product.grouped_features item=feature}
+        {if $feature.id_feature == '60'}
+            {assign var=regulable value=['Sí','Sim','Oui','Ja','Si','Yes']}
+            {if in_array($feature.value, $regulable)}
+              <img border="0" src="{$urls.img_url}icons/regulable.png" id="{if in_array(91,Product::getProductCategories($product->id|intval))}bombilla-regulable{else}regulable-icon{/if}">
+            {/if}
+        {/if}
+        {if $feature.id_feature == 45}
+            {if $feature.value|strstr:"5"}
+              <img border="0" id="garantia_ampliada" src="{$urls.img_url}icons/garantia.png">
+            {/if}
+          {/if}
+          
+      {/foreach}
+      {if $product.name|strstr:"ATEX"}
+        <img border="0" id="atex_sello" src="{$urls.img_url}icons/atex.png">
+      {/if}
+      {if $product.name|strstr:"WiFi" OR $product.name|strstr:"Wifi" OR $product.name|strstr:"WIFI" OR $product.name|strstr:"wifi"}
+        <img border="0" id="wifi_sello" src="{$urls.img_url}icons/wifi.png">
+      {/if}
+      <div id="flags-image">
+        {foreach from=$product.grouped_features item=feature}
+        
+          {if $feature.id_feature == 55}
+            {assign var=waterproof value=['IP44', 'IP54','IP55','IP65','IP66','IP67','IP68']}
+            {if in_array($feature.value,$waterproof)}
+              <img border="0" src="{$urls.img_url}icons/waterproof.png" id="waterproof">
+            {/if}
+          {/if}
+          
+          
+          
+        {/foreach}
+        {if $product.reference|strstr:"T512P20" OR $product.reference|strstr:"T8M18P" OR $product.reference|strstr:"FC8BC30"}
+          <img border="0" src="{$urls.img_url}icons/meat.svg" id="meat">
+        {/if}
+        {if in_array(251,Product::getProductCategories($product->id|intval))}
+            <img border="0" src="{$urls.img_url}icons/eco.png" id="serieeco">
+        {/if}
+      </div>
+        {$product.combinations|dump}
+       {block name='product_thumbnail'}
+        {if $product.cover}
+        {assign var='coverImage' value=Product::getCover($product->id)}
+        {assign var='coverImageId' value="{$product->id}-{$coverImage.id_image}"}
+        
+        {if $product.images|@count > 1}
+
+            {foreach from=$product.images item=foto}
+                {if !isset($foto.cover) OR $foto.cover != 1}
+                    {assign var='secondImageId' value="{$product.id}-{$foto.id_image}"}
+                    {assign var='secondImageUrl' value=$link->getImageLink($product.link_rewrite, $secondImageId)}
+                    {break}
+                {/if}
+            {/foreach}
+        {else}
+          {assign var='secondImageUrl' value=''}
+        {/if} 
+
+          <a href="{$product.canonical_url}" style="position:relative;">
+           
+            <img
+              class="imagen-cover"
+              data-src="{$secondImageUrl}"
+              src="{$link->getImageLink($product.link_rewrite, $coverImageId)}"
+              alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+              data-full-size-image-url="{$product.cover.large.url}"           itemprop="image" />
+            <img 
+              class="imagen-hover" 
+              src=""
+              itemprop="image" />
+
+
+          </a>
+
+        {else}
+          <a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
+            <img src="{$urls.img_ps_url}noimage.jpg" />
+          </a>
+        {/if}
+        {if preg_match('/^[tT][rR]./', $product.reference)}
+        {foreach from=$product.grouped_features item=feature}
+          {if $feature.id_feature == '26'}
+          <div class="voltaje" style="position:absolute;z-index:99;top:10px;right:10px;font-weight:bold;font-size:0.8em;color:#00338e;">{$feature.value}</div>
+          {/if}
+        {/foreach}
+        {/if}
+        {if $product.id_category_default == 254}
+        <div class="outlet" style="position: absolute;z-index: 99;bottom:10px;left:10px;font-weight: bold;font-size:0.9em;color:#00338e;">OUTLET</div>
+        {/if}
+
+      {/block}
+      {*widget name='comblist' productid=$product.id_product ref=true*}
+    </div>
+      <div class="product-in-list--product-stock">
+        {*hook h='displayProductListExtra' productid=$product.id_product*}
+            
+        {if $product.quantity_all_versions > 0}
+            <span class="product-in-stock">{l s='En stock' d='Shop.Theme.Product'}</span>
+        {else}
+           <span class="product-out-of-stock">{l s='Reservar' d='Shop.Theme.Product'}</span>
+        {/if}
+        {if $product.id_category_default == 190}
+        {else}
+        {foreach from=$product.grouped_features item=feature}
+            {if $feature.id_feature == '9'}{assign var=potencia value=$feature.value}{/if}
+            {if $feature.id_feature == '10'}{assign var=lumen value=$feature.value}{/if}
+        {/foreach}
+        {if isset($potencia) && isset($lumen)}
+            {$potencia = $potencia|regex_replace:"/[^0-9.]/":""}
+            {$potencia = $potencia|regex_replace:"/ $/":""}
+            {$lumen = $lumen|regex_replace:"/ $/":""}
+            {if $product.reference|strstr:"T512" OR $product.reference|strstr:"T524" OR $product.reference|strstr:"T212" OR $product.reference|strstr:"TCOB" OR $product.reference|strstr:"T280" OR $product.reference|strstr:"T120" OR $product.reference|strstr:"TLS12"}
+              {$potencia = $potencia*5}
+            {/if}
+        
+            {if !empty($potencia) AND !empty($lumen)}
+                {math assign="coeficiente" equation="(x / y)" x=$lumen y=$potencia}
+          
+          
+                <span class="etiqueta-eficiencia ef-{if $coeficiente < 85}g{elseif $coeficiente >= 85 && $coeficiente < 110}f{elseif $coeficiente >= 110 && $coeficiente < 135}e{elseif $coeficiente >=135 && $coeficiente < 160}d{elseif $coeficiente >= 160 && $coeficiente < 185}c{elseif $coeficiente >=185 && $coeficiente <= 210}b{elseif $coeficiente > 210}a{/if}">
+                    <span class="etiqueta-bg"></span>
+                    <span class="etiqueta-inner"> {if $coeficiente < 85}g{elseif $coeficiente >= 85 && $coeficiente < 110}f{elseif $coeficiente >= 110 && $coeficiente < 135}e{elseif $coeficiente >=135 && $coeficiente < 160}d{elseif $coeficiente >= 160 && $coeficiente < 185}c{elseif $coeficiente >=185 && $coeficiente <= 210}b{elseif $coeficiente > 210}a{/if}</span>
+                    <span class="ttipbox">*Normativa 2023</span>
+                </span>
+
+            {/if}
+          
+        {/if}
+        {/if}        
+      </div>
+      <div class="product-in-list--product-flags">
+        {foreach from=$product.grouped_features item=feature}
+          {if $feature.id_feature == 46}
+            {assign var=diodo value=$feature.value|lower}<pre style="display: none">{$diodo|@var_dump}</pre>
+            {if file_exists("`$smarty.server.DOCUMENT_ROOT`/`$urls.theme_assets`/img/icons/`$diodo`.png")}
+              <span class="tipoled"><img border="0" src="{$urls.img_url}icons/{$diodo}.png" style="width: auto;max-width: 100px !important;min-width: 50px"><span class="ttipbox">{$feature.name}: {$feature.value}</span></span>
+            {/if}
+          {/if}
+          {if $feature.id_feature == 63}
+            {assign var=driver value=$feature.value|lower}
+            {if file_exists("`$smarty.server.DOCUMENT_ROOT`/`$urls.theme_assets`/img/icons/`$driver`.png")}
+              <span class="tipoled"><img border="0" src="{$urls.img_url}icons/{$driver}.png" style="width: auto;max-width: 100px !important;min-width: 50px"><span class="ttipbox">{$feature.name}: {$feature.value}</span></span>
+            {/if}
+          {/if}
+        {/foreach}
+      </div>
+      <div class="product-in-list--product-name">
+        {block name='product_name'}
+            {assign var=idsmetro value=','|explode:"282,343,619,620,824,873,1368,1369,1370,1371,361,362,426,460,540,899,900,901,902,921,1537,1538,1540,1541,1847,1848,903,1340,1651,1665,1698,1655,1114,1328"}
+              {if in_array($product.id_product, $idsmetro)}
+                {assign var=array_patrones value=['/1 metro/','/1 Metro/','/2 metros/','/2 Metros/','/1m/','/2m/','/1000mm/','/1000 mm/','/1 m/','/2 m/','/2000mm/','/2000 mm/']}
+                {assign var=array_reemplazos value=["<strong>1 metro</strong>","<strong>1 Metro</strong>","<strong>2 metros</strong>","<strong>2 Metros</strong>","<strong>1m</strong>","<strong>2m</strong>","<strong>1000mm</strong>","<strong>1000 mm</strong>","<strong>1 m</strong>","<strong>2 m</strong>","<strong>2000mm</strong>","<strong>2000 mm</strong>"]}
+
+                {assign var=nombre_producto value=$product.name|regex_replace:$array_patrones:$array_reemplazos}
+                
+              {else}
+                {assign var=nombre_producto value=$product.name}
+                {if $product.name|strstr:"regulable"}
+                  {assign var="nombre_producto" value=$product.name|replace:"regulable":"<strong style=\"color:green;\">regulable</strong>"}
+                {elseif $product.name|strstr:"Regulable"}
+                  {assign var="nombre_producto" value=$product.name|replace:"Regulable":"<strong style=\"color:green;\">Regulable</strong>"}
+                {elseif $product.name|strstr:"REGULABLE"}
+                  {assign var="nombre_producto" value=$product.name|replace:"REGULABLE":"<strong style=\"color:green;\">REGULABLE</strong>"}
+
+                {/if}
+              {/if}
+          {if $page.page_name == 'index'}
+            <a href="{$product.canonical_url}"><h3 class="product-name" itemprop="name" content="{$product.name}">{$nombre_producto|truncate:80:'...' nofilter}{foreach from=$product.grouped_features item=feature}
+          {if $feature.id_feature == '47'} {l s='Corte' d='Shop.Theme.Catalog'} {$feature.value}{/if}{/foreach}</h3></a><span style="font-size: 0.8em;">{$product.reference}</span>
+          {else}
+          
+            <a href="{$product.canonical_url}"><h2 class="product-name" itemprop="name" content="{$product.name}">{$nombre_producto|truncate:80:'...' nofilter}{foreach from=$product.grouped_features item=feature}
+          {if $feature.id_feature == '47'} {l s='Corte' d='Shop.Theme.Catalog'} {$feature.value}{break}{/if}{/foreach}</h2></a><span style="font-size: 0.8em;">{$product.reference}</span>
+          {/if}
+         
+        {/block}
+      </div>
+
+      <div class="product-in-list--product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+
+        {block name='product_price_and_shipping'}
+          {if $product.show_price}
+            {if $customer.is_logged}
+              {assign var=customergroups value=[4,7,19,30,32,33,39,40]}
+              {if in_array($customer.id_default_group, $customergroups)}{else}
+              {if $product.has_discount}
+                {hook h='displayProductPriceBlock' product=$product type="old_price"}
+                <span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
+                <span class="regular-price">{$product.regular_price}</span>
+                {if $page.page_name != 'cms'}
+                {if $product.discount_type === 'percentage'}
+                  <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
+                {elseif $product.discount_type === 'amount'}
+                  <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+                {/if}
+                {/if}
+              {/if}
+              {/if}
+              {/if}
+
+              {hook h='displayProductPriceBlock' product=$product type="before_price"}
+              <meta itemprop="name" content="{$product.name}" />
+              <span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
+              <meta itemprop="priceCurrency" content="EUR" />
+              {if !$customer.is_logged }
+                 {include file='catalog/_partials/miniatures/product-prices-nologged.tpl'}
+              {else}
+                {include file='catalog/_partials/miniatures/product-prices-logged.tpl'}
+              {/if}
+
+              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+
+              {hook h='displayProductPriceBlock' product=$product type='weight'}
+
+          {/if}<!-- If product.show_price -->
+        {/block}
+      </div>
+      {assign var=caracteristicas value=[]}
+      {foreach from=$product.grouped_features item=feature}
+        {if $feature.id_feature == '9'}{assign var=potencia value=$feature.value}{append var='caracteristicas' value=$potencia index=0}{elseif $feature.id_feature == '10'}{assign var=lumenes value=$feature.value|cat:' lumens'}{append var='caracteristicas' value=$lumenes index=1}{elseif $feature.id_feature =='41'}{append var='caracteristicas' value=$feature.value index=2}{/if}
+      {/foreach}
+              <div class="product-in-list--product-variants">
+
+        {widget name='comblist' productid=$product.id_product}
+        {block name='product_reviews'}
+          {hook h='displayProductListReviews' productid=$product.id_product product=$product}
+        {/block}
+        <div class="product_temperatures hiddendiv">
+          {$product.combinations|dump}
+        </div>
+        {/block}
+        
+        </div>
+      <div class="product-in-list--product-reviews">
+        <etrusted-widget data-etrusted-widget-id="wdg-04f4d208-e9b5-41bc-bbb1-98c08dfc41e3" data-sku="{$product.reference}"></etrusted-widget>
+      </div>
+      <div class="product-in-list--product-features{if $caracteristicas} grey{/if}">
+        {block name="caracteristicas_producto"}
+          
+          {if $caracteristicas|@count gt 0}
+          {assign var=caracterist value=$caracteristicas|implode:'</span> · <span>'}
+          <span {if preg_match('/^[0-9]+[-+]*[0-9]*[ ]*[wW]/',$caracterist)} style="font-weight:bold;color:#ff3c00"{/if}>{$caracterist|escape:'htmlall'|nl2br nofilter}</span>
+          {else}
+          <span style="color:#eee"></span>
+          {/if}
+        </div>
+
+      <!-- @todo: use include file='catalog/_partials/product-flags.tpl'} -->
+      {*{block name='product_flags'}
+        <ul class="product-flags">
+          {foreach from=$product.flags item=flag}
+            {if $flag.type == 'discount'}
+              {continue}
+            {/if}
+            <li class="product-flag {$flag.type}">{$flag.label}</li>
+          {/foreach}
+        </ul>
+      {/block}*}
+
+      <div class="quickviewwrap{if !$product.main_variants} no-variants{/if} hidden-sm-down">
+        {block name='quick_view'}
+          <a class="quick-view" href="#" data-link-action="quickview">
+            <i class="material-icons search">&#xE8B6;</i> 
+          </a>
+        {/block}
+        
+        {block name='product_variants'}
+          {if $product.main_variants}
+            {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
+          {/if}
+        {/block}
+      </div>
+      <div>
+         
+      </div>
+  </article>
+{/block}

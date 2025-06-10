@@ -1,0 +1,13 @@
+[{shop_name}]({shop_url})
+Hola {firstname} {lastname},
+Su pedido ha sido enviado
+
+Su pedido con la referencia {order_name} ya está listo para ser recogido en nuestras instalaciones.
+
+Por favor, recuerde que nuestro horario de recogida es de **9:30 a 17:00h** de Lunes a Jueves, o hasta las **16:00h** los Viernes
+
+Si ha seleccionado como medio de pago "Paga al recoger", recuerde que puede realizar el pago únicamente con **tarjeta**, o con el *importe exacto en efectivo** 
+
+Puede revisar su pedido y descargar la factura desde ["Historial de pedidos"]({history_url}) de su cuenta de cliente, haciendo clic en {my_account_url} en nuestra tienda.
+
+[{shop_name}]({shop_url})

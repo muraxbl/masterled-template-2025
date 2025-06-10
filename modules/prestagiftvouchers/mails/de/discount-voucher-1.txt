@@ -1,0 +1,8 @@
+Guten Tag {firstname} {lastname},
+Vielen Dank für Ihren Einkauf!
+Nach Ihrer letzten Bestellung freuen wir uns Ihnen die Versandkosten ohne Mindesteinkaufswert.
+Den Sie bei Ihrem nächsten Einkauf mit dem folgenden Code nutzen können: {code}
+Dieses Angebot ist für {duration} Tage gültig.
+Sie finden diesen Code jederzeit in Ihrem Kundenkonto unter „Ihre Gutscheine“ wieder. Sie können Ihren Code auf der Seite mit der Bestellzusammenfassung in dem entsprechenden Feld eingeben.
+Angebot annehmen!
+Bis bald {shop_name}
